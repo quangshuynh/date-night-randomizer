@@ -88,9 +88,7 @@ const Randomizer = () => {
                       />
                     )}
                     <h3>
-                      {restaurant.tags && restaurant.tags.name
-                        ? restaurant.tags.name
-                        : 'Unnamed Restaurant'}
+                      {restaurant.tags && restaurant.tags.name ? restaurant.tags.name : 'Unnamed Restaurant'}
                     </h3>
                     {address && (
                       <>
