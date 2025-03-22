@@ -93,9 +93,12 @@ const Randomizer = () => {
                         : 'Unnamed Restaurant'}
                     </h3>
                     {address && (
-                      <a href={mapsUrl} target="_blank" rel="noopener noreferrer">
-                        View on Map
-                      </a>
+                      <>
+                        <p className="restaurant-address">{address}</p>
+                        <a href={mapsUrl} target="_blank" rel="noopener noreferrer">
+                          View on Map
+                        </a>
+                      </>
                     )}
                   </div>
                 );
