@@ -11,7 +11,7 @@ const Randomizer = () => {
   const fetchRecommendations = async (cuisine) => {
     const overpassQuery = `
       [out:json];
-      area["name"="Rochester"]["boundary"="administrative"]->.searchArea;
+      area["name"="Rochester, NY"]["boundary"="administrative"]->.searchArea;
       (
         node["amenity"="restaurant"]["cuisine"~"${cuisine}",i](area.searchArea);
         way["amenity"="restaurant"]["cuisine"~"${cuisine}",i](area.searchArea);
