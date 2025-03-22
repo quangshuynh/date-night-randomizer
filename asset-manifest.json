@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/date-night-randomizer/static/css/main.3a51ed80.css",
-    "main.js": "/date-night-randomizer/static/js/main.fdf0bb9e.js",
+    "main.css": "/date-night-randomizer/static/css/main.2b2bdabc.css",
+    "main.js": "/date-night-randomizer/static/js/main.8fc4ab3f.js",
     "static/js/453.cfd7210c.chunk.js": "/date-night-randomizer/static/js/453.cfd7210c.chunk.js",
     "index.html": "/date-night-randomizer/index.html",
-    "main.3a51ed80.css.map": "/date-night-randomizer/static/css/main.3a51ed80.css.map",
-    "main.fdf0bb9e.js.map": "/date-night-randomizer/static/js/main.fdf0bb9e.js.map",
+    "main.2b2bdabc.css.map": "/date-night-randomizer/static/css/main.2b2bdabc.css.map",
+    "main.8fc4ab3f.js.map": "/date-night-randomizer/static/js/main.8fc4ab3f.js.map",
     "453.cfd7210c.chunk.js.map": "/date-night-randomizer/static/js/453.cfd7210c.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.3a51ed80.css",
-    "static/js/main.fdf0bb9e.js"
+    "static/css/main.2b2bdabc.css",
+    "static/js/main.8fc4ab3f.js"
   ]
 }
