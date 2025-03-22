@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/date-chooser/static/css/main.3a51ed80.css",
+    "main.js": "/date-chooser/static/js/main.eded9c02.js",
+    "static/js/453.cfd7210c.chunk.js": "/date-chooser/static/js/453.cfd7210c.chunk.js",
+    "index.html": "/date-chooser/index.html",
+    "main.3a51ed80.css.map": "/date-chooser/static/css/main.3a51ed80.css.map",
+    "main.eded9c02.js.map": "/date-chooser/static/js/main.eded9c02.js.map",
+    "453.cfd7210c.chunk.js.map": "/date-chooser/static/js/453.cfd7210c.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.3a51ed80.css",
+    "static/js/main.eded9c02.js"
+  ]
+}
