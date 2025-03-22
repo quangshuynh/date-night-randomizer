@@ -1,82 +1,141 @@
 .randomizer-page {
-    background: linear-gradient(to bottom, #FFC5D3, #FDFD96); 
-    min-height: 100vh;
-    padding: 2rem;
+  background: linear-gradient(to bottom, #FFC5D3, #FDFD96); 
+  min-height: 100vh;
+  padding: 2rem;
+}
+
+.randomizer-container {
+  text-align: center;
+  margin: 2rem auto;
+  padding: 2rem;
+  max-width: 600px;
+  background-color: #fff8f0;
+  background-image: 
+    radial-gradient(#ffd1dc 1px, transparent 1px),
+    radial-gradient(#ffd1dc 1px, transparent 1px);
+  background-size: 20px 20px;
+  background-position: 0 0, 10px 10px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  animation: popIn 0.5s ease-out;
+}
+
+.randomize-btn {
+  background-color: #ff7f50;
+  color: #fff;
+  border: none;
+  padding: 1rem 2rem;
+  font-size: 1.2rem;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  margin-bottom: 1.5rem;
+}
+
+.randomize-btn:hover {
+  background-color: #ff6347;
+  transform: scale(1.05);
+}
+
+.results h2 {
+  margin: 1rem 0;
+  font-size: 1.5rem;
+  color: #333;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes popIn {
+  0% {
+    transform: scale(0.95);
+    opacity: 0;
   }
-  
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 600px) {
   .randomizer-container {
-    text-align: center;
-    margin: 2rem auto;
-    padding: 2rem;
-    max-width: 600px;
-    background-color: #fff8f0;
-    background-image: 
-      radial-gradient(#ffd1dc 1px, transparent 1px),
-      radial-gradient(#ffd1dc 1px, transparent 1px);
-    background-size: 20px 20px;
-    background-position: 0 0, 10px 10px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    animation: popIn 0.5s ease-out;
+    padding: 1.5rem;
+    margin: 1rem;
   }
   
   .randomize-btn {
-    background-color: #ff7f50;
-    color: #fff;
-    border: none;
-    padding: 1rem 2rem;
-    font-size: 1.2rem;
-    border-radius: 50px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    margin-bottom: 1.5rem;
-  }
-  
-  .randomize-btn:hover {
-    background-color: #ff6347;
-    transform: scale(1.05);
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
   }
   
   .results h2 {
-    margin: 1rem 0;
-    font-size: 1.5rem;
-    color: #333;
-    animation: fadeIn 0.5s ease-in-out;
+    font-size: 1.2rem;
   }
-  
-  @keyframes popIn {
-    0% {
-      transform: scale(0.95);
-      opacity: 0;
-    }
-    100% {
-      transform: scale(1);
-      opacity: 1;
-    }
-  }
-  
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
-  }
-  
-  @media (max-width: 600px) {
-    .randomizer-container {
-      padding: 1.5rem;
-      margin: 1rem;
-    }
-    
-    .randomize-btn {
-      padding: 0.8rem 1.5rem;
-      font-size: 1rem;
-    }
-    
-    .results h2 {
-      font-size: 1.2rem;
-    }
-  }
-  
+}
+
+.recommended-section {
+  margin-top: 2rem;
+  padding: 2rem;
+  background-color: #ffe6e6; 
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.recommended-section h2 {
+  font-family: 'Georgia', serif;
+  color: #d6336c;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.restaurant-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.restaurant-card {
+  background: #fff;
+  border: 1px solid #f0f0f0;
+  border-radius: 8px;
+  padding: 1rem;
+  width: 250px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+}
+
+.restaurant-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.restaurant-card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  color: #b30059;
+}
+
+.restaurant-card p {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.restaurant-card a {
+  color: #007BFF;
+  text-decoration: none;
+}
+
+.restaurant-image {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+  margin-bottom: 0.5rem;
+}
