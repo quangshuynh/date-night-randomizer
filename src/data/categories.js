@@ -11,7 +11,6 @@ export const restaurants = [
   "French",
   "American",
   "Greek",
-  "Spanish",
   "Lebanese",
   "Turkish",
   "Ethiopian",

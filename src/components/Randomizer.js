@@ -7,15 +7,15 @@ const Randomizer = () => {
   const [selectedActivity, setSelectedActivity] = useState('');
   const [selectedEntertainment, setSelectedEntertainment] = useState('');
   const [recommendedRestaurants, setRecommendedRestaurants] = useState([]);
-  
+  const [showAll, setShowAll] = useState(false);
+
   const fetchRecommendations = async (cuisine) => {
     const overpassQuery = `
       [out:json];
-      area["name"="Rochester, NY"]["boundary"="administrative"]->.searchArea;
       (
-        node["amenity"="restaurant"]["cuisine"~"${cuisine}",i](area.searchArea);
-        way["amenity"="restaurant"]["cuisine"~"${cuisine}",i](area.searchArea);
-        relation["amenity"="restaurant"]["cuisine"~"${cuisine}",i](area.searchArea);
+        node(around:64373,43.1566,-77.6088)["amenity"="restaurant"]["cuisine"~"${cuisine}",i];
+        way(around:64373,43.1566,-77.6088)["amenity"="restaurant"]["cuisine"~"${cuisine}",i];
+        relation(around:64373,43.1566,-77.6088)["amenity"="restaurant"]["cuisine"~"${cuisine}",i];
       );
       out center;
     `;
@@ -30,6 +30,7 @@ const Randomizer = () => {
       });
       const data = await response.json();
       setRecommendedRestaurants(data.elements);
+      setShowAll(false); 
     } catch (error) {
       console.error("Error fetching recommended restaurants:", error);
     }
@@ -54,6 +55,10 @@ const Randomizer = () => {
     return `${houseNumber ? houseNumber + ' ' : ''}${street ? street + ', ' : ''}${city ? city + ', ' : ''}${state ? state + ' ' : ''}${postcode ? postcode : ''}`.trim();
   };
 
+  const displayedRestaurants = showAll 
+    ? recommendedRestaurants 
+    : recommendedRestaurants.slice(0, 3);
+
   return (
     <div className="randomizer-page">
       <div className="randomizer-container">
@@ -69,7 +74,7 @@ const Randomizer = () => {
           <div className="recommended-section">
             <h2>Recommended {selectedRestaurant} Restaurants in Rochester</h2>
             <div className="restaurant-cards">
-              {recommendedRestaurants.map((restaurant) => {
+              {displayedRestaurants.map((restaurant) => {
                 const address = getAddress(restaurant.tags);
                 const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(address)}`;
                 const imageUrl = restaurant.tags && restaurant.tags.image ? restaurant.tags.image : null;
@@ -96,6 +101,14 @@ const Randomizer = () => {
                 );
               })}
             </div>
+            {recommendedRestaurants.length > 5 && (
+              <button 
+                className="show-all-btn" 
+                onClick={() => setShowAll(!showAll)}
+              >
+                {showAll ? 'Show Less' : 'Show All'}
+              </button>
+            )}
           </div>
         )}
       </div>
